@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import com.orhunakkan.utilities.Driver;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class SampleDoNotDeleteUI {
+public class sampleDoNotDeleteUI {
 
     @Test
     public void validateStandardUsername() {

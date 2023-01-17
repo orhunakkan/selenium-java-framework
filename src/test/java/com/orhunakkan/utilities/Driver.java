@@ -15,16 +15,16 @@ public class Driver {
         if (driver == null) {
             String browserType = ConfigurationReader.getProperty("browser");
             switch (browserType) {
-                case "chrome":
+                case "chrome" -> {
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                     driver.manage().window().maximize();
-                    break;
-                case "edge":
+                }
+                case "edge" -> {
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
                     driver.manage().window().maximize();
-                    break;
+                }
             }
         }
         return driver;
