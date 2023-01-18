@@ -1,11 +1,14 @@
 package com.orhunakkan.ui_tdd;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import com.orhunakkan.utilities.Driver;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import io.github.bonigarcia.seljup.SeleniumJupiter;
 
+@ExtendWith(SeleniumJupiter.class)
 public class sampleDoNotDeleteUI {
 
     @Test

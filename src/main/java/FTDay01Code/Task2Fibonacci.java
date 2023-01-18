@@ -3,27 +3,44 @@ package FTDay01Code;
 public class Task2Fibonacci {
 
     /*
-        Fibonacci
+     * Fibonacci
+     * 
+     * Create a program that will give you the Nth Fibonacci number where N is an
+     * int
+     * Fibonacci is a sequence of number starting from 0, 1 where the following
+     * numbers are the sum of the previous 2 numbers
+     * Note: Fibonacci numbers are read like index values, so the 0th Fibonacci is
+     * 0, 1st value is 1, 2nd value is 1, etc
+     * 
+     * Ex:
+     * input:
+     * 8
+     * output:
+     * 21
+     * 
+     * -> ex of the sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21
+     * 
+     * Test data:
+     * n -> result
+     * 0 -> 0
+     * 1 -> 1
+     * 2 -> 1
+     * 3 -> 2
+     * 6 -> 8
+     * 8 -> 21
+     */
 
-        Create a program that will give you the Nth Fibonacci number where N is an int
-        Fibonacci is a sequence of number starting from 0, 1 where the following numbers are the sum of the previous 2 numbers
-        Note: Fibonacci numbers are read like index values, so the 0th Fibonacci is 0, 1st value is 1, 2nd value is 1, etc
+    public static int fibonacci(int n) {
+        if (n == 0) {
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
 
-        Ex:
-            input:
-                8
-            output:
-                21
-
-            -> ex of the sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21
-
-        Test data:
-            n -> result
-            0 -> 0
-            1 -> 1
-            2 -> 1
-            3 -> 2
-            6 -> 8
-            8 -> 21
-    */
+    public static void main(String[] args) {
+        System.out.println(fibonacci(3));
+    }
 }
