@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import io.github.bonigarcia.seljup.SeleniumJupiter;
 
 @ExtendWith(SeleniumJupiter.class)
-public class sampleDoNotDeleteUI {
+public class SampleDoNotDeleteUI {
 
     @Test
     public void validateStandardUsername() {
