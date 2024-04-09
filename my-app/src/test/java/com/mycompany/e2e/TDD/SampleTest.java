@@ -1,4 +1,4 @@
-package com.mycompany.e2e;
+package com.mycompany.e2e.TDD;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
