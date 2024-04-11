@@ -59,6 +59,12 @@
       <scope>test</scope>
     </dependency>
 
+    <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>5.1.1</version>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -68,6 +74,22 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.2.5</version>
+        <configuration>
+          <systemPropertyVariables>
+            <cucumber.options>--plugin pretty --plugin html:target/cucumber-html-report</cucumber.options>
+          </systemPropertyVariables>
+          <includes>
+            <include>**/*Test.java</include>
+            <include>**/*Tests.java</include>
+            <include>**/*TestSteps.java</include>
+          </includes>
+          <properties>
+            <configurationParameters> 
+            cucumber.glue=com.mycompany.e2e.BDD.step_definitions 
+            cucumber.features=src/test/resources/com/mycompany/e2e/features/BDD 
+            </configurationParameters>
+          </properties>
+        </configuration>
       </plugin>
 
     </plugins>
