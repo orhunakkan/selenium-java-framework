@@ -1,14 +1,13 @@
-package com.mycompany.e2e.BDD.step_definitions;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+package com.mycompany.e2e.step_definitions;
 
 import com.mycompany.utilities.Driver;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class SampleTestSteps {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class SampleSteps {
 
     private String pageTitle;
 
@@ -19,7 +18,6 @@ public class SampleTestSteps {
 
     @When("the user retrieves the page title")
     public void the_user_retrieves_the_page_title() {
-        // Write code here that turns the phrase above into concrete actions
         pageTitle = Driver.getDriver().getTitle();
     }
 
