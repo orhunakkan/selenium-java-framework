@@ -79,24 +79,6 @@
             <version>5.4.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>3.2.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-            <version>3.2.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-oauth2-client</artifactId>
-            <version>3.2.4</version>
-        </dependency>
-
     </dependencies>
 
     <build>
@@ -117,8 +99,8 @@
                     </includes>
                     <properties>
                         <configurationParameters>
-                          cucumber.glue=com.mycompany.e2e.step_definitions
-                          cucumber.features=src/test/resources/com/mycompany/e2e/features
+                            cucumber.glue=com.mycompany.e2e.step_definitions
+                            cucumber.features=src/test/resources/com/mycompany/e2e/features
                         </configurationParameters>
                     </properties>
                 </configuration>
