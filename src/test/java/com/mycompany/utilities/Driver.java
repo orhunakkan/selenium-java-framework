@@ -12,31 +12,37 @@ import java.time.Duration;
 
 public class Driver {
 
-    private static WebDriver driver;
+    private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
 
     public static WebDriver getDriver() {
-        if (driver == null) {
+        if (driverPool.get() == null) {
             String browserName = ConfigurationReader.getProperty("browser").toLowerCase();
             switch (browserName) {
                 case "firefox":
-                    driver = new FirefoxDriver();
+                    driverPool.set(new FirefoxDriver());
+                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                    driverPool.get().manage().window().maximize();
                     break;
                 case "edge":
-                    driver = new EdgeDriver();
+                    driverPool.set(new EdgeDriver());
+                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                    driverPool.get().manage().window().maximize();
                     break;
                 case "chrome":
                 default:
-                    driver = new ChromeDriver();
+                    driverPool.set(new ChromeDriver());
+                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                    driverPool.get().manage().window().maximize();
                     break;
             }
         }
-        return driver;
+        return driverPool.get();
     }
 
     public static void closeDriver() {
-        if (driver != null) {
-            driver.quit();
-            driver = null;
+        if (driverPool.get() != null) {
+            driverPool.get().quit();
+            driverPool.remove();
         }
     }
 
