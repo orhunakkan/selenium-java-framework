@@ -14,7 +14,7 @@ public class ConfigurationReader {
             properties.load(file);
             file.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Failed to load properties file", e);
         }
     }
 

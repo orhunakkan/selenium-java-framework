@@ -1,18 +1,15 @@
 package com.mycompany.utilities;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
 public class Driver {
 
-    private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
+    private static final InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
 
     public static WebDriver getDriver() {
         if (driverPool.get() == null) {
@@ -44,15 +41,5 @@ public class Driver {
             driverPool.get().quit();
             driverPool.remove();
         }
-    }
-
-    public static void waitForElementToBeVisible(WebDriver driver, By locator, long timeOutInSeconds) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOutInSeconds));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
-
-    public static void waitForElementToBeClickable(WebDriver driver, By locator, long timeOutInSeconds) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOutInSeconds));
-        wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 }

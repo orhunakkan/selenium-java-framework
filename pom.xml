@@ -107,9 +107,15 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
+                    <parallel>methods</parallel>
+                    <threadCount>4</threadCount>
+                    <testFailureIgnore>true</testFailureIgnore>
                     <systemPropertyVariables>
                         <cucumber.options>--plugin pretty --plugin html:target/cucumber-html-report</cucumber.options>
                     </systemPropertyVariables>
+<!--                    <includes>-->
+<!--                        <include>**/CukesRunner*.java</include>-->
+<!--                    </includes>-->
                     <includes>
                         <include>**/*Test.java</include>
                         <include>**/*Tests.java</include>
