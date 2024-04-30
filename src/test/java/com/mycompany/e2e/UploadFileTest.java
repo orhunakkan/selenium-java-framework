@@ -9,11 +9,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class UploadFileTest {
 
     @Test
-    public void uploadFileTest(){
+    public void uploadFileTest() {
         Driver.getDriver().get("https://practice.cydeo.com/upload");
         UploadFilePage uploadFilePage = new UploadFilePage();
-        uploadFilePage.chooseFileBtn.sendKeys("/Users/aysun/Downloads/some-file.txt");
+        uploadFilePage.chooseFileBtn.sendKeys("/Users/orhunakkan/selenium-java-framework/src/test/resources/data/sample.txt");
         uploadFilePage.uploadBtn.click();
-        assertEquals(uploadFilePage.headerText.getText(),"File Uploaded!");
+        assertEquals(uploadFilePage.headerText.getText(), "File Uploaded!");
+        Driver.closeDriver();
     }
 }

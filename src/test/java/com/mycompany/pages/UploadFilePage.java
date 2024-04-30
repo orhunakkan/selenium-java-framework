@@ -7,17 +7,14 @@ import org.openqa.selenium.support.PageFactory;
 
 public class UploadFilePage {
 
-    public UploadFilePage(){
-        PageFactory.initElements(Driver.getDriver(),this);
-    }
-
-    @FindBy(id="file-upload")
+    @FindBy(id = "file-upload")
     public WebElement chooseFileBtn;
-
-    @FindBy(id="file-submit")
+    @FindBy(id = "file-submit")
     public WebElement uploadBtn;
-
     @FindBy(xpath = "//h3[.='File Uploaded!']")
     public WebElement headerText;
 
+    public UploadFilePage() {
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
 }

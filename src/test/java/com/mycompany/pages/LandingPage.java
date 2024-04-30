@@ -17,5 +17,4 @@ public class LandingPage {
         this.driver = Driver.getDriver();
         PageFactory.initElements(driver, this);
     }
-
 }

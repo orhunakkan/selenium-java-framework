@@ -12,26 +12,15 @@ public class AlertPracticeTest {
     AlertPracticePage alertPracticePage = new AlertPracticePage();
 
     @Test
-    public void jsAlertTest(){
-        //1. Go to website: http://practice.cydeo.com/javascript_alerts
+    public void jsAlertTest() {
         Driver.getDriver().get("http://practice.cydeo.com/javascript_alerts");
-
-        //2. Click for JS Prompt button for alert to be displayed
         alertPracticePage.jsAlertBtn.click();
-
         Alert alert = Driver.getDriver().switchTo().alert();
-
-        //3. Write "hello" in input text
         alert.sendKeys("hello");
-
-        //3. Click OK button from the alert
         alert.accept();
-
-        //4. Verify "You entered: hello" text is displayed in result
         String actualResultText = alertPracticePage.resultText.getText();
         String expectedResultText = "You entered: hello";
-        assertEquals(actualResultText,expectedResultText);
-
+        assertEquals(actualResultText, expectedResultText);
         Driver.closeDriver();
     }
 

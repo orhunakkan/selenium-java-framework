@@ -9,11 +9,11 @@ import java.time.Duration;
 
 public class Driver {
 
-    private Driver(){
+    private static final InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
+
+    private Driver() {
 
     }
-
-    private static final InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
 
     public static WebDriver getDriver() {
         if (driverPool.get() == null) {
