@@ -64,7 +64,6 @@ public class DropDownTest {
 
     @Test
     public void languagesDropdownTest() {
-
         Select languagesSelect = new Select(dropDownPage.languagesDropdown);
         List<WebElement> languagesOptions = languagesSelect.getOptions();
 

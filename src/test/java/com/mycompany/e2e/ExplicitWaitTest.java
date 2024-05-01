@@ -25,6 +25,7 @@ public class ExplicitWaitTest {
         explicitWaitPracticePage.password.sendKeys("incorrectpassword");
         explicitWaitPracticePage.submitBtn.click();
         assertTrue(explicitWaitPracticePage.resultText.isDisplayed());
+        Driver.closeDriver();
     }
 
     @Test
@@ -33,5 +34,6 @@ public class ExplicitWaitTest {
         wait.until(ExpectedConditions.titleIs("Dynamic title"));
         assertTrue(explicitWaitPracticePage.doneMsg.isDisplayed());
         assertTrue(explicitWaitPracticePage.image.isDisplayed());
+        Driver.closeDriver();
     }
 }

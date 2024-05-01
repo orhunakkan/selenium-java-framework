@@ -24,6 +24,7 @@ public class ActionsPracticeTest {
         assertTrue(actionsPracticePage.name2.isDisplayed(), "Name 2 did not appear!");
         actions.moveToElement(actionsPracticePage.img3).perform();
         assertTrue(actionsPracticePage.name3.isDisplayed(), "Name 3 did not appear!");
+        Driver.closeDriver();
     }
 
 
@@ -34,6 +35,7 @@ public class ActionsPracticeTest {
                 .sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.RETURN)
                 .perform();
         assertEquals(Driver.getDriver().getTitle(), "No A/B Test");
+        Driver.closeDriver();
     }
 
     @Test
@@ -42,5 +44,6 @@ public class ActionsPracticeTest {
         JavascriptExecutor js = ((JavascriptExecutor) Driver.getDriver());
         js.executeScript("arguments[0].scrollIntoView(true)", actionsPracticePage.cydeoLink, actionsPracticePage.homeLink);
         js.executeScript("arguments[1].scrollIntoView(true)", actionsPracticePage.cydeoLink, actionsPracticePage.homeLink);
+        Driver.closeDriver();
     }
 }

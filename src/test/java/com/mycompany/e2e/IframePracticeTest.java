@@ -17,11 +17,10 @@ public class IframePracticeTest {
         String actualText = iframePracticePage.contentTextArea.getText();
         String expectedText = "Your content goes here.";
         assertEquals(actualText, expectedText);
-
         Driver.getDriver().switchTo().defaultContent();
-
         String actualHeader = iframePracticePage.headerText.getText();
         String expectedHeader = "An iFrame containing the TinyMCE WYSIWYG Editor";
         assertEquals(actualHeader, expectedHeader);
+        Driver.closeDriver();
     }
 }
