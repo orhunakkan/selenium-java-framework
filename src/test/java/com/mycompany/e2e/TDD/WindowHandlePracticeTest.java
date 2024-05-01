@@ -1,9 +1,8 @@
-package com.mycompany.e2e;
+package com.mycompany.e2e.TDD;
 
 import com.mycompany.pages.WindowHandlePracticePage;
 import com.mycompany.utilities.Driver;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 
 import java.util.Set;
 

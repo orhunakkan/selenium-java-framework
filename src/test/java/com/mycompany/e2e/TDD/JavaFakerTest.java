@@ -1,4 +1,4 @@
-package com.mycompany.e2e;
+package com.mycompany.e2e.TDD;
 
 import com.github.javafaker.Faker;
 import com.mycompany.pages.JavaFakerPage;
