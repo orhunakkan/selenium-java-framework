@@ -27,7 +27,6 @@ public class ActionsPracticeTest {
         Driver.closeDriver();
     }
 
-
     @Test
     public void rightClickTest() {
         Driver.getDriver().get("https://practice.cydeo.com/");
